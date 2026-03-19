@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppression de compte — Gridz</title>
+    <meta name="description" content="Demandez la suppression de votre compte Gridz et des données associées.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FAFAF8;
+            --surface: #FFFFFF;
+            --text: #1A1A1A;
+            --text-muted: #6B6B6B;
+            --accent: #2D6A4F;
+            --accent-light: #E8F3ED;
+            --border: #E5E5E3;
+            --radius: 10px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 24px 40px;
+        }
+
+        header h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            font-weight: 400;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        main {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+
+        .intro {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            margin-bottom: 48px;
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.75;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.35rem;
+            font-weight: 400;
+            color: var(--text);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent-light);
+        }
+
+        p {
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        ol {
+            margin: 8px 0 16px 20px;
+            color: var(--text);
+        }
+
+        li {
+            margin-bottom: 6px;
+            padding-left: 4px;
+        }
+
+        li::marker {
+            color: var(--accent);
+        }
+
+        ul {
+            margin: 8px 0 16px 20px;
+            color: var(--text);
+            list-style: none;
+        }
+
+        ul li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: 600;
+            margin-right: 8px;
+        }
+
+        ul.retained li::before {
+            content: '⏳';
+        }
+
+        strong {
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+            transition: opacity 0.2s;
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
+
+        .highlight {
+            background: var(--accent-light);
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .cta-wrapper {
+            text-align: center;
+            margin: 48px 0;
+        }
+
+        .cta {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 32px;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-weight: 600;
+            transition: opacity 0.2s;
+            box-shadow: 0 2px 12px rgba(45, 106, 79, 0.25);
+        }
+
+        .cta:hover {
+            opacity: 0.85;
+            color: #fff;
+        }
+
+        footer {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 32px 24px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 600px) {
+            header { padding: 40px 20px 28px; }
+            main { padding: 0 18px 60px; }
+            .intro { padding: 20px; }
+            section h2 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Suppression de compte</h1>
+    </header>
+
+    <main>
+        <div class="intro">
+            Vous pouvez demander la suppression de votre compte Gridz et de l'ensemble des données personnelles qui y sont associées. Cette page décrit la procédure à suivre ainsi que les données concernées.
+        </div>
+
+        <section>
+            <h2>Procédure</h2>
+            <ol>
+                <li>Cliquez sur le bouton ci-dessous pour envoyer un e-mail de demande de suppression.</li>
+                <li>Indiquez dans l'e-mail <strong>l'adresse e-mail associée à votre compte Gridz</strong>.</li>
+                <li>Votre compte et vos données seront supprimés sous <span class="highlight">7 jours ouvrés</span>.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Données supprimées</h2>
+            <ul>
+                <li>Compte utilisateur (Firebase Authentication)</li>
+                <li>Données de profil (pseudo, photo de profil)</li>
+                <li>Historique des parties et scores</li>
+                <li>Messages échangés via le chat</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Données conservées temporairement</h2>
+            <ul class="retained">
+                <li>Logs anonymisés à des fins de diagnostic — supprimés automatiquement après 30 jours</li>
+            </ul>
+        </section>
+
+        <div class="cta-wrapper">
+            <a class="cta" href="mailto:bastien.hatinguais@gmail.com?subject=Demande%20de%20suppression%20de%20compte%20Gridz&body=Bonjour%2C%0A%0AJe%20souhaite%20supprimer%20mon%20compte%20Gridz.%0A%0AAdresse%20e-mail%20associ%C3%A9e%20au%20compte%20%3A%20%5BVotre%20adresse%20e-mail%5D%0A%0ACordialement">
+                Demander la suppression de mon compte
+            </a>
+        </div>
+    </main>
+
+</body>
+</html>
