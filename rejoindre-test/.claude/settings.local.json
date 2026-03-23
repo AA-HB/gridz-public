@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp \"C:/Users/basti/Downloads/Gemini_Generated_Image_nus3eonus3eonus3.png\" \"C:/Users/basti/Documents/Travail/Projets/gridz-doc/rejoindre-test/img-groupe-1.png\")",
+      "Bash(cp \"C:/Users/basti/Downloads/Gemini_Generated_Image_qu5keaqu5keaqu5k.png\" \"C:/Users/basti/Documents/Travail/Projets/gridz-doc/rejoindre-test/img-groupe-2.png\")",
+      "Bash(cp \"C:/Users/basti/Downloads/6cd84c2c-f470-4a13-a663-1fe3dafe1a00.jpg\" \"C:/Users/basti/Documents/Travail/Projets/gridz-doc/rejoindre-test/img-play-1.jpg\")",
+      "Bash(cp \"C:/Users/basti/Downloads/Gemini_Generated_Image_39yn1q39yn1q39yn.png\" \"C:/Users/basti/Documents/Travail/Projets/gridz-doc/rejoindre-test/img-play-2.png\")",
+      "Bash(magick -version)",
+      "Bash(convert -version)",
+      "Bash(python -c \"from PIL import Image; print\\(''Pillow OK''\\)\")",
+      "Bash(python:*)"
+    ]
+  }
+}
