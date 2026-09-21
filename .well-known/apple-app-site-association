@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["34QX8BK4VP.com.gridz.game"],
+        "components": [
+          {
+            "/": "/",
+            "comment": "Seule la racine play.gridz.fr/ ouvre l'app : les pages support, politique de confidentialite et suppression de compte doivent rester dans le navigateur."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.gridz.game",
+      "sha256_cert_fingerprints": [
+        "DB:F3:A8:ED:70:06:9B:59:2C:0A:04:64:20:26:3E:E2:88:EC:5B:33:9B:6D:65:DF:81:A4:CD:B3:B6:33:18:B7"
+      ]
+    }
+  }
+]
