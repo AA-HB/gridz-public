@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["34QX8BK4VP.com.gridz.game"],
+        "components": [
+          {
+            "/": "/*",
+            "comment": "Le site play.gridz.fr ne sert que le lien d'installation : toutes ses URL ouvrent l'app si elle est installee."
+          }
+        ]
+      }
+    ]
+  }
+}
