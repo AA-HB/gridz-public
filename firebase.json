@@ -1,47 +1,220 @@
 {
-  "hosting": {
-    "site": "gridz-link",
-    "public": "install",
-    "appAssociation": "NONE",
-    "ignore": [
-      "firebase.json"
-    ],
-    "headers": [
-      {
-        "source": "/.well-known/apple-app-site-association",
-        "headers": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          },
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=3600"
-          }
-        ]
-      },
-      {
-        "source": "/.well-known/assetlinks.json",
-        "headers": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          },
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=3600"
-          }
-        ]
-      },
-      {
-        "source": "index.html",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "no-cache, no-store, must-revalidate"
-          }
-        ]
-      }
-    ]
-  }
+  "hosting": [
+    {
+      "target": "link",
+      "public": "install",
+      "appAssociation": "NONE",
+      "ignore": [
+        "firebase.json"
+      ],
+      "headers": [
+        {
+          "source": "/.well-known/apple-app-site-association",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=3600"
+            }
+          ]
+        },
+        {
+          "source": "/.well-known/assetlinks.json",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=3600"
+            }
+          ]
+        },
+        {
+          "source": "index.html",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, must-revalidate"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "target": "landing",
+      "public": "landing",
+      "cleanUrls": true,
+      "trailingSlash": false,
+      "ignore": [
+        "**/.*"
+      ],
+      "redirects": [
+        {
+          "source": "/login",
+          "destination": "https://app.gridz.fr/login",
+          "type": 301
+        },
+        {
+          "source": "/login/:rest*",
+          "destination": "https://app.gridz.fr/login/:rest",
+          "type": 301
+        },
+        {
+          "source": "/register",
+          "destination": "https://app.gridz.fr/register",
+          "type": 301
+        },
+        {
+          "source": "/forgot-password",
+          "destination": "https://app.gridz.fr/forgot-password",
+          "type": 301
+        },
+        {
+          "source": "/rooms/:rest*",
+          "destination": "https://app.gridz.fr/rooms/:rest",
+          "type": 301
+        },
+        {
+          "source": "/daily",
+          "destination": "https://app.gridz.fr/daily",
+          "type": 301
+        },
+        {
+          "source": "/matchmaking",
+          "destination": "https://app.gridz.fr/matchmaking",
+          "type": 301
+        },
+        {
+          "source": "/friends",
+          "destination": "https://app.gridz.fr/friends",
+          "type": 301
+        },
+        {
+          "source": "/leaderboard",
+          "destination": "https://app.gridz.fr/leaderboard",
+          "type": 301
+        },
+        {
+          "source": "/players/:rest*",
+          "destination": "https://app.gridz.fr/players/:rest",
+          "type": 301
+        },
+        {
+          "source": "/profile",
+          "destination": "https://app.gridz.fr/profile",
+          "type": 301
+        },
+        {
+          "source": "/profile/:rest*",
+          "destination": "https://app.gridz.fr/profile/:rest",
+          "type": 301
+        },
+        {
+          "source": "/choose-username",
+          "destination": "https://app.gridz.fr/choose-username",
+          "type": 301
+        },
+        {
+          "source": "/settings",
+          "destination": "https://app.gridz.fr/settings",
+          "type": 301
+        },
+        {
+          "source": "/solo-games/:rest*",
+          "destination": "https://app.gridz.fr/solo-games/:rest",
+          "type": 301
+        }
+      ],
+      "headers": [
+        {
+          "source": "**",
+          "headers": [
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "strict-origin-when-cross-origin"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "Permissions-Policy",
+              "value": "camera=(), microphone=(), geolocation=()"
+            }
+          ]
+        },
+        {
+          "source": "**/*.html",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=0, must-revalidate"
+            }
+          ]
+        },
+        {
+          "source": "/",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=0, must-revalidate"
+            }
+          ]
+        },
+        {
+          "source": "/fonts/**",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=31536000, immutable"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ]
+        },
+        {
+          "source": "**/*.@(webp|png|jpg|svg|ico)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=604800"
+            }
+          ]
+        },
+        {
+          "source": "/@(robots.txt|sitemap.xml|llms.txt)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=3600"
+            }
+          ]
+        },
+        {
+          "source": "/llms.txt",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain; charset=utf-8"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

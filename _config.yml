@@ -1,0 +1,7 @@
+# GitHub Pages ne sert que les pages legales et support : landing/ et install/
+# sont publies par Firebase Hosting (voir README).
+exclude:
+  - landing
+  - install
+  - firebase.json
+  - README.md

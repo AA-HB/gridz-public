@@ -26,7 +26,7 @@ c'est ce que garantit le bloc `headers` de `firebase.json`.
 Deploiement :
 
 ```
-firebase deploy --only hosting
+firebase deploy --only hosting:link
 ```
 
 Le domaine et les identifiants correspondants sont declares cote app dans
@@ -35,3 +35,22 @@ Le domaine et les identifiants correspondants sont declares cote app dans
 (`applinks:play.gridz.fr`). Changer de domaine impose de modifier les deux,
 puis de republier l'app sur les stores : la verification App Links n'a lieu
 qu'a l'installation.
+
+## Landing page — gridz.fr
+
+`landing/` est la page d'accueil publique, servie sur `https://gridz.fr` (site
+Hosting `gridz-landing`, target `landing`). Page statique optimisee SEO : pas
+de JS requis pour le contenu, JSON-LD (VideoGame, FAQ, HowTo), `robots.txt`,
+`sitemap.xml`, `llms.txt`. L'app Flutter est servie sur `https://app.gridz.fr`
+et `firebase.json` redirige (301) ses anciennes routes (`/rooms/...`,
+`/daily`, ...) depuis gridz.fr.
+
+Les FAQ visibles et le JSON-LD `FAQPage` doivent rester identiques mot pour
+mot : modifier les deux ensemble.
+
+Deploiement :
+
+```
+firebase deploy --only hosting:landing
+firebase deploy --only hosting:link   # play.gridz.fr
+```

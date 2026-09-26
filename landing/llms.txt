@@ -1,0 +1,28 @@
+# Gridz
+
+> Gridz est un jeu de mots fléchés en ligne gratuit, en français, jouable sur navigateur (https://app.gridz.fr), iPhone et Android. Il propose des grilles du jour communes à tous les joueurs, des parties multijoueur en temps réel (duel et coop), un mode classé ELO et un mode solo.
+
+Mise à jour : 2026-09-25
+
+## Modes de jeu
+
+- Mots fléchés du jour : les mêmes grilles pour tous, une par niveau de force (difficulté), chronométrées, avec un top 3 quotidien et des séries de jours consécutifs. Jouables hors ligne.
+- Classé : matchmaking selon le score ELO. Rangs : Bronze, Argent (1 000), Or (1 400), Diamant (1 800).
+- Duel : contre ses amis sur la même grille ; le premier qui trouve un mot le remporte.
+- Coop : toute l’équipe remplit une seule grille et voit en direct les cases sélectionnées par les autres.
+- Solo : choix de la force et de la taille de grille, indices disponibles.
+
+Les salons privés se rejoignent par invitation ou par code, avec un chat intégré. Un compte gratuit (Google, Apple ou e-mail) est nécessaire pour jouer.
+
+## Mots fléchés ou mots croisés ?
+
+Dans les mots fléchés, les définitions sont écrites directement dans la grille, dans des cases qui portent une flèche indiquant le sens du mot. Dans les mots croisés, les définitions sont listées à côté de la grille et numérotées par ligne et par colonne.
+
+## Liens
+
+- [Site officiel](https://gridz.fr/)
+- [Jouer dans le navigateur](https://app.gridz.fr/)
+- [App Store](https://apps.apple.com/fr/app/gridzz/id6760212757)
+- [Google Play](https://play.google.com/store/apps/details?id=com.gridz.game)
+- [Support](https://aa-hb.github.io/gridz-public/support/)
+- [Politique de confidentialité](https://aa-hb.github.io/gridz-public/politique-confidentialite/)

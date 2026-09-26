@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "gridz-e580a"
+  },
+  "targets": {
+    "gridz-e580a": {
+      "hosting": {
+        "link": [
+          "gridz-link"
+        ],
+        "landing": [
+          "gridz-landing"
+        ]
+      }
+    }
   }
 }
