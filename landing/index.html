@@ -3,6 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+// Joueur déjà connecté sur app.gridz.fr (cookie posé par l'app sur .gridz.fr) :
+// direction le jeu. Sauf s'il vient de l'app, pour qu'il puisse consulter la landing.
+if (/(?:^|; )gridz_session=1(?:;|$)/.test(document.cookie) &&
+    document.referrer.indexOf('https://app.gridz.fr') !== 0) {
+  location.replace('https://app.gridz.fr/');
+}
+</script>
 <title>Gridz : mots fléchés gratuits en ligne et multijoueur</title>
 <meta name="description" content="Jouez aux mots fléchés gratuits en ligne : grille du jour, duels en temps réel entre amis, coop, mode classé ELO et solo. Sur navigateur, iPhone et Android.">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -507,7 +515,7 @@ x-t::before{content:attr(data-t)}
 
   <header class="wrap site-header">
     <a class="brand" href="/" aria-label="Gridz — accueil"><img src="/img/logo-gridz-350.webp" srcset="/img/logo-gridz-350.webp 350w, /img/logo-gridz.webp 700w" sizes="179px" width="179" height="34" alt="Gridz"></a>
-    <a class="btn btn-sm" href="https://app.gridz.fr/">Jouer</a>
+    <a class="btn btn-sm" href="https://app.gridz.fr/" data-play>Jouer</a>
   </header>
 
   <main id="contenu">
@@ -522,7 +530,7 @@ x-t::before{content:attr(data-t)}
       <div class="hero-copy">
         <h1 id="hero-title">Gridz, les mots fléchés gratuits en ligne, <em>en solo ou entre amis.</em></h1>
         <p class="lede">Grille du jour, duels et coop en temps réel, classement ELO. Gratuit sur navigateur, iPhone et Android.</p>
-        <div class="hero-cta"><a class="btn btn-lg" href="https://app.gridz.fr/">Jouer</a></div>
+        <div class="hero-cta"><a class="btn btn-lg" href="https://app.gridz.fr/" data-play>Jouer</a></div>
       </div>
 
       <figure class="demo">
@@ -724,7 +732,7 @@ x-t::before{content:attr(data-t)}
         <img src="/img/logo-gridz-350.webp" width="252" height="48" alt="" loading="lazy" decoding="async">
         <h2 id="cta-title">La grille d’aujourd’hui vous attend</h2>
         <p>Gratuit, sans téléchargement. Connexion avec Google, Apple ou e-mail.</p>
-        <a class="btn btn-lg" href="https://app.gridz.fr/">Jouer gratuitement</a>
+        <a class="btn btn-lg" href="https://app.gridz.fr/" data-play>Jouer gratuitement</a>
       </div>
     </section>
   </main>
@@ -741,6 +749,19 @@ x-t::before{content:attr(data-t)}
 </div>
 
 <script>
+// Sur téléphone, « Jouer » mène au store de la plateforme plutôt qu'à la version web.
+(function () {
+  var ua = navigator.userAgent;
+  var ios = /iPhone|iPod/.test(ua);
+  var android = /Android/.test(ua) && /Mobile/.test(ua);
+  if (!ios && !android) return;
+  var store = ios
+    ? 'https://apps.apple.com/fr/app/gridzz/id6760212757'
+    : 'https://play.google.com/store/apps/details?id=com.gridz.game';
+  var links = document.querySelectorAll('a[data-play]');
+  for (var i = 0; i < links.length; i++) links[i].href = store;
+})();
+
 // Date du jour sur le calendrier de la grille du jour.
 (function () {
   var d = new Date();
